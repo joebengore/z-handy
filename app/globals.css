@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/*
+ * Brand palette — deep professional blue with a high-contrast
+ * amber/safety-orange accent for CTAs. Exposed as Tailwind color
+ * utilities: bg-brand, text-accent, border-brand-dark, etc.
+ */
+@theme {
+  --color-brand: #1e3a8a;
+  --color-brand-dark: #172554;
+  --color-brand-light: #2b4fb3;
+  --color-accent: #f59e0b;
+  --color-accent-dark: #d97706;
+}
+
+html {
+  /* Smooth-scroll between anchored sections, offset for the sticky navbar. */
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
