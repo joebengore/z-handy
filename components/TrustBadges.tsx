@@ -1,20 +1,20 @@
-import { ShieldCheck, Building2, ThumbsUp } from "lucide-react";
+import { ShieldCheck, BadgeDollarSign, Award } from "lucide-react";
 
 const badges = [
+  {
+    icon: BadgeDollarSign,
+    title: "Price Match Guarantee",
+    subtitle: "We won't be beat by any qualified written quote",
+  },
+  {
+    icon: Award,
+    title: "3-Year Workmanship Warranty",
+    subtitle: "Every paint job protected long after we leave",
+  },
   {
     icon: ShieldCheck,
     title: "Fully Licensed & Insured",
     subtitle: "Complete peace of mind on every job",
-  },
-  {
-    icon: Building2,
-    title: "Commercial & Residential",
-    subtitle: "Equipped for projects of any scale",
-  },
-  {
-    icon: ThumbsUp,
-    title: "Satisfaction Guaranteed",
-    subtitle: "We aren't done until you're happy",
   },
 ] as const;
 

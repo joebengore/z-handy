@@ -5,11 +5,10 @@
  */
 export const site = {
   name: "Z-Handyman",
-  tagline: "Commercial Painting & Property Maintenance Experts",
+  tagline: "Tampa Bay's Commercial Painting Specialists",
 
-  // NOTE: Placeholder contact details — replace with real values before launch.
-  phone: "(813) 555-0199",
-  phoneHref: "tel:+18135550199",
+  phone: "(813) 802-2552",
+  phoneHref: "tel:+18138022552",
   email: "contact@z-handyman.com",
 
   hours: "Open Daily · 8:00 AM – 6:00 PM",

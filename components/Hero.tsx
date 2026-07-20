@@ -16,25 +16,27 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover"
+        className="-z-20 object-cover object-[70%_center] md:object-center"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-dark/90 via-brand-dark/75 to-brand/50" />
 
       <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-amber-300 ring-1 ring-white/20">
-            Serving the {site.serviceArea}
+            Commercial Painting Specialists · {site.serviceArea}
           </p>
 
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Commercial &amp; Residential Painting,{" "}
-            <span className="text-accent">Done Right.</span>
+            Commercial-Grade Painting.{" "}
+            <span className="text-accent">Unbeatable on Price.</span>
           </h1>
 
           <p className="mt-6 text-lg leading-relaxed text-slate-200 sm:text-xl">
-            From office buildings and retail spaces to flawless home finishes and
-            expert property maintenance — {site.name} delivers professional
-            results on time and on budget.
+            From corporate campuses and retail storefronts to flawless home
+            repaints — {site.name} delivers commercial-grade results backed by
+            our <strong className="font-semibold text-white">Price Match Guarantee</strong>{" "}
+            and an industry-leading{" "}
+            <strong className="font-semibold text-white">3-Year Workmanship Warranty</strong>.
           </p>
 
           {/* Primary CTAs */}

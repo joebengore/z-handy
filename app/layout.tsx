@@ -12,20 +12,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   // Placeholder domain — update once the production domain is connected on Vercel.
   metadataBase: new URL("https://z-handyman.vercel.app"),
-  title: `${site.name} | Commercial & Residential Painting, Handyman Services`,
+  title: `${site.name} | Commercial Painting Specialists — Price Match Guarantee`,
   description:
-    "Z-Handyman delivers professional commercial and residential painting, yard care, and expert handyman services across the Greater Tampa Metro Area. Licensed, insured, and satisfaction guaranteed. Book your free estimate online.",
+    "Z-Handyman is Tampa Bay's commercial painting specialist — backed by a Price Match Guarantee and 3-Year Workmanship Warranty. Residential painting, landscape design & installation, and remodel carpentry too. Book your free estimate online.",
   keywords: [
     "commercial painting",
+    "commercial painting contractor Tampa",
     "residential painting",
-    "handyman services",
-    "yard care",
+    "price match painting",
+    "landscape design installation",
+    "remodel handyman",
     "Tampa painting contractor",
   ],
   openGraph: {
-    title: `${site.name} | Painting & Property Maintenance`,
+    title: `${site.name} | Commercial Painting Specialists`,
     description:
-      "Professional commercial & residential painting and handyman services in the Greater Tampa Metro Area.",
+      "Commercial & residential painting backed by a Price Match Guarantee and 3-Year Workmanship Warranty in the Greater Tampa Metro Area.",
     type: "website",
     images: [{ url: "/images/hero.jpg" }],
   },

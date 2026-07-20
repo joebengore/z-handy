@@ -3,10 +3,10 @@ import { CheckCircle2 } from "lucide-react";
 import { site } from "@/lib/site";
 
 const highlights = [
-  "Detailed, transparent quotes — no surprise costs",
-  "Punctual, uniformed, background-checked crews",
-  "Premium materials and durable, long-lasting coatings",
-  "Job sites left spotless, every single day",
+  "Price Match Guarantee — we won't be beat by a qualified quote",
+  "3-Year Workmanship Warranty on every commercial & residential paint job",
+  "After-hours & weekend scheduling that keeps your business open",
+  "Punctual, uniformed, background-checked crews — job sites left spotless",
 ] as const;
 
 /** Two-column about block: photo collage + why-choose-us copy. */
@@ -42,13 +42,14 @@ export default function About() {
             About {site.name}
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Craftsmanship You Can Trust, Service You Can Count On
+            Commercial-Grade Craftsmanship, Small-Team Accountability
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            {site.name} was built on a simple idea: treat every property —
-            commercial or residential — with the same care we&apos;d give our
-            own. That means honest estimates, meticulous prep work, and
-            finishes that stand up to daily life.
+            {site.name} was built on a simple idea: bring commercial-grade
+            standards to every property we touch. That means honest, itemized
+            estimates, meticulous prep work, and coatings engineered to stand
+            up to daily wear — whether it&apos;s a 40,000 sq ft office park or
+            your family home.
           </p>
           <ul className="mt-8 space-y-4">
             {highlights.map((item) => (
