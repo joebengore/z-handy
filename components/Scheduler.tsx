@@ -58,7 +58,7 @@ export default function Scheduler() {
           <div className="flex items-center gap-3 border-b border-slate-200 bg-brand px-6 py-4">
             <CalendarDays className="h-5 w-5 text-accent" aria-hidden="true" />
             <p className="text-sm font-semibold text-white">
-              {site.name} · Free 30-Minute Estimate
+              {site.name} · Free Estimate
             </p>
           </div>
 
