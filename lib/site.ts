@@ -15,9 +15,9 @@ export const site = {
   serviceArea: "Greater Tampa Metro Area",
   areasServed: ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Wesley Chapel"],
 
-  // Cal.com scheduling configuration (https://cal.com/zhandy/30min)
+  // Cal.com scheduling configuration (https://cal.com/zhandy/free-estimate)
   cal: {
-    link: "zhandy/30min",
+    link: "zhandy/free-estimate",
     namespace: "30min",
   },
 } as const;
