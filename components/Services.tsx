@@ -49,45 +49,67 @@ export default function Services() {
 
         {/* Cards */}
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Commercial Painting — flagship, spans 2 columns */}
-          <article className="group flex flex-col rounded-2xl border-2 border-brand/20 bg-white p-8 shadow-md transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl sm:col-span-2">
-            <div className="flex items-center gap-4">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand text-white">
-                <Building2 className="h-7 w-7" aria-hidden="true" />
+          {/* Commercial Painting — flagship, full-width split panel */}
+          <article className="group overflow-hidden rounded-2xl border-2 border-brand/20 bg-white shadow-md transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl sm:col-span-2 lg:col-span-3">
+            <div className="flex flex-col lg:flex-row">
+              <div className="relative h-56 w-full sm:h-72 lg:h-auto lg:w-1/2">
+                <Image
+                  src="/images/commercial.jpg"
+                  alt="Professional painter spray-coating the interior walls of a commercial warehouse"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md">
+                  Our Flagship Service
+                </span>
               </div>
-              <span className="rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                Our Flagship Service
-              </span>
+              <div className="flex flex-1 flex-col p-8 lg:p-10">
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand text-white">
+                  <Building2 className="h-7 w-7" aria-hidden="true" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">Commercial Painting</h3>
+                <p className="mt-1 text-sm font-medium text-accent-dark">
+                  Offices · Retail · Industrial · HOA & Multi-Family · Corporate Exteriors
+                </p>
+                <p className="mt-3 flex-1 leading-relaxed text-slate-600">
+                  When your property is your brand, the finish matters. Our
+                  crews deliver spec-perfect coatings for office buildings,
+                  storefronts, warehouses, and multi-family communities — with
+                  night, weekend, and phased scheduling that keeps your
+                  operation running and your tenants undisturbed. Every project
+                  is supervised, insured, and completed to a documented scope,
+                  and we stand behind every square foot for three full years.
+                </p>
+                <GuaranteeChips />
+              </div>
             </div>
-            <h3 className="mt-5 text-2xl font-bold text-slate-900">Commercial Painting</h3>
-            <p className="mt-1 text-sm font-medium text-accent-dark">
-              Offices · Retail · Industrial · HOA & Multi-Family · Corporate Exteriors
-            </p>
-            <p className="mt-3 flex-1 leading-relaxed text-slate-600">
-              When your property is your brand, the finish matters. Our crews
-              deliver spec-perfect, minimal-disruption painting for office
-              buildings, storefronts, warehouses, and multi-family communities —
-              scheduled nights, weekends, or around your business hours so you
-              never lose a day of revenue. Get a competing bid? Bring it to us:
-              we&apos;ll match any qualified written quote, and stand behind every
-              square foot for three full years.
-            </p>
-            <GuaranteeChips />
           </article>
 
           {/* Residential Painting */}
-          <article className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
-            <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
-              <Home className="h-7 w-7" aria-hidden="true" />
+          <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
+            <div className="relative h-40 w-full">
+              <Image
+                src="/images/interior.jpg"
+                alt="Freshly painted, professionally finished home interior"
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
-            <h3 className="text-xl font-semibold text-slate-900">Residential Painting</h3>
-            <p className="mt-1 text-sm font-medium text-accent-dark">Interior · Exterior · Premium Finishes</p>
-            <p className="mt-3 flex-1 leading-relaxed text-slate-600">
-              The same commercial-grade prep, premium coatings, and crisp lines
-              we bring to corporate campuses — delivered to your front door.
-              Your home deserves nothing less.
-            </p>
-            <GuaranteeChips />
+            <div className="flex flex-1 flex-col p-8 pt-6">
+              <div className="mb-3 inline-flex items-center gap-2 text-brand">
+                <Home className="h-5 w-5" aria-hidden="true" />
+                <h3 className="text-xl font-semibold text-slate-900">Residential Painting</h3>
+              </div>
+              <p className="text-sm font-medium text-accent-dark">Interior · Exterior · Premium Finishes</p>
+              <p className="mt-3 flex-1 leading-relaxed text-slate-600">
+                The same commercial-grade preparation, premium coatings, and
+                crisp lines we bring to corporate campuses — delivered to your
+                front door, on schedule and on budget.
+              </p>
+              <GuaranteeChips />
+            </div>
           </article>
 
           {/* Lawn & Landscape Design */}
@@ -141,21 +163,44 @@ export default function Services() {
             </div>
           </article>
 
-          {/* CTA card */}
-          <article className="flex flex-col justify-center rounded-2xl bg-brand p-8 text-white shadow-sm">
-            <h3 className="text-xl font-semibold">Have a competing bid?</h3>
-            <p className="mt-3 leading-relaxed text-slate-200">
-              Bring it to your free, no-obligation estimate — if it qualifies,
-              we&apos;ll match it. Pick a time that works for you and we&apos;ll
-              handle the rest.
-            </p>
-            <a
-              href="#schedule"
-              className="mt-6 inline-flex items-center gap-2 self-start rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
-            >
-              Get a Free Estimate
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+          {/* Free estimate CTA — full-width banner */}
+          <article className="overflow-hidden rounded-2xl bg-brand text-white shadow-md sm:col-span-2 lg:col-span-3">
+            <div className="flex flex-col lg:flex-row-reverse">
+              <div className="relative h-56 w-full sm:h-64 lg:h-auto lg:w-2/5">
+                <Image
+                  src="/images/estimate.jpg"
+                  alt="Z-Handyman estimator reviewing a project on-site with homeowners"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-brand/60 to-transparent lg:bg-gradient-to-r lg:from-brand lg:via-brand/20 lg:to-transparent"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="flex flex-1 flex-col justify-center p-8 lg:p-10">
+                <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+                  Free On-Site Estimates
+                </p>
+                <h3 className="mt-2 text-2xl font-bold">
+                  Straightforward pricing, right at your property
+                </h3>
+                <p className="mt-3 max-w-xl leading-relaxed text-slate-200">
+                  We&apos;ll walk the site with you, document the scope, and
+                  deliver a written, itemized quote — free and with no
+                  obligation. Have a competing bid? Bring it along: if it
+                  qualifies, we&apos;ll match it.
+                </p>
+                <a
+                  href="#schedule"
+                  className="mt-6 inline-flex items-center gap-2 self-start rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
+                >
+                  Schedule Your Free Estimate
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
           </article>
         </div>
 
