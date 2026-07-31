@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { site } from "@/lib/site";
+import Reveal from "@/components/Reveal";
 
 const highlights = [
   "Price Match Guarantee — we won't be beat by a qualified quote",
@@ -15,7 +16,7 @@ export default function About() {
     <section id="about" className="py-20 sm:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         {/* Image collage */}
-        <div className="relative">
+        <Reveal direction="right" className="relative">
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/interior.jpg"
@@ -34,10 +35,10 @@ export default function About() {
               className="h-full w-full object-cover"
             />
           </div>
-        </div>
+        </Reveal>
 
         {/* Copy */}
-        <div className="lg:pl-6">
+        <Reveal direction="left" delay={120} className="lg:pl-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-dark">
             About {site.name}
           </p>
@@ -59,7 +60,7 @@ export default function About() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

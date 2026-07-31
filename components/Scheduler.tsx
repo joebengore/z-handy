@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { CalendarDays } from "lucide-react";
 import { site } from "@/lib/site";
+import Reveal from "@/components/Reveal";
 
 /**
  * Inline Cal.com scheduler wrapped in a Tailwind loading skeleton.
@@ -40,7 +41,7 @@ export default function Scheduler() {
     <section id="schedule" className="bg-slate-50 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-dark">
             Online Scheduling
           </p>
@@ -51,7 +52,7 @@ export default function Scheduler() {
             Pick a date and time that works for you — we&apos;ll confirm your
             appointment instantly. No phone tag required.
           </p>
-        </div>
+        </Reveal>
 
         {/* Scheduler card */}
         <div className="relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">

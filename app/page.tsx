@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustBadges from "@/components/TrustBadges";
 import Services from "@/components/Services";
+import Process from "@/components/Process";
+import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Scheduler from "@/components/Scheduler";
 import ContactSection from "@/components/ContactSection";
@@ -19,6 +21,8 @@ export default function HomePage() {
         <Hero />
         <TrustBadges />
         <Services />
+        <Process />
+        <Stats />
         <About />
         <Scheduler />
         <ContactSection />

@@ -8,6 +8,7 @@ import {
   BadgeDollarSign,
   ShieldCheck,
 } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 /** Reusable guarantee chips shown on painting service cards. */
 function GuaranteeChips() {
@@ -34,7 +35,7 @@ export default function Services() {
     <section id="services" className="bg-slate-50 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-dark">
             What We Do
           </p>
@@ -45,12 +46,13 @@ export default function Services() {
             Commercial painting is our craft. Every paint job is backed by our
             Price Match Guarantee and a 3-Year Workmanship Warranty.
           </p>
-        </div>
+        </Reveal>
 
         {/* Cards */}
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Commercial Painting — flagship, full-width split panel */}
-          <article className="group overflow-hidden rounded-2xl border-2 border-brand/20 bg-white shadow-md transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl sm:col-span-2 lg:col-span-3">
+          <Reveal className="sm:col-span-2 lg:col-span-3">
+            <article className="group h-full overflow-hidden rounded-2xl border-2 border-brand/20 bg-white shadow-md transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl">
             <div className="flex flex-col lg:flex-row">
               <div className="relative h-56 w-full sm:h-72 lg:h-auto lg:w-1/2">
                 <Image
@@ -84,10 +86,12 @@ export default function Services() {
                 <GuaranteeChips />
               </div>
             </div>
-          </article>
+            </article>
+          </Reveal>
 
           {/* Residential Painting */}
-          <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
+          <Reveal delay={0}>
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
             <div className="relative h-40 w-full">
               <Image
                 src="/images/interior.jpg"
@@ -110,10 +114,12 @@ export default function Services() {
               </p>
               <GuaranteeChips />
             </div>
-          </article>
+            </article>
+          </Reveal>
 
           {/* Lawn & Landscape Design */}
-          <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
+          <Reveal delay={140}>
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
             <div className="relative h-40 w-full">
               <Image
                 src="/images/yard-services.jpg"
@@ -136,10 +142,12 @@ export default function Services() {
                 specialists — we don&apos;t offer routine mowing or maintenance.)
               </p>
             </div>
-          </article>
+            </article>
+          </Reveal>
 
           {/* Remodel & Finish Work */}
-          <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
+          <Reveal delay={280}>
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
             <div className="relative h-40 w-full">
               <Image
                 src="/images/general-handyman.jpg"
@@ -161,10 +169,12 @@ export default function Services() {
                 craftsmanship that turns “almost done” into done.
               </p>
             </div>
-          </article>
+            </article>
+          </Reveal>
 
           {/* Free estimate CTA — full-width banner */}
-          <article className="overflow-hidden rounded-2xl bg-brand text-white shadow-md sm:col-span-2 lg:col-span-3">
+          <Reveal className="sm:col-span-2 lg:col-span-3">
+            <article className="h-full overflow-hidden rounded-2xl bg-brand text-white shadow-md">
             <div className="flex flex-col lg:flex-row-reverse">
               <div className="relative h-56 w-full sm:h-64 lg:h-auto lg:w-2/5">
                 <Image
@@ -201,7 +211,8 @@ export default function Services() {
                 </a>
               </div>
             </div>
-          </article>
+            </article>
+          </Reveal>
         </div>
 
         {/* Price Match Guarantee — full terms */}

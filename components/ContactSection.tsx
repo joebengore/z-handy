@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Phone, Mail, Clock, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { site } from "@/lib/site";
+import Reveal from "@/components/Reveal";
 
 interface FormData {
   name: string;
@@ -44,7 +45,7 @@ export default function ContactSection() {
     <section id="contact" className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-dark">
             Get In Touch
           </p>
@@ -54,7 +55,7 @@ export default function ContactSection() {
           <p className="mt-4 text-lg text-slate-600">
             Prefer to talk it through first? Reach out any way you like.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-2">
           {/* Column 1 — contact info */}
