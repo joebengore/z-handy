@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   // Placeholder domain — update once the production domain is connected on Vercel.
-  metadataBase: new URL("https://z-handyman.vercel.app"),
+  metadataBase: new URL("https://z-handy.vercel.app"),
   title: `${site.name} | Commercial Painting Specialists — Price Match Guarantee`,
   description:
     "Z-Handyman is Tampa Bay's commercial painting specialist — backed by a Price Match Guarantee and 3-Year Workmanship Warranty. Residential painting, landscape design & installation, and remodel carpentry too. Book your free estimate online.",

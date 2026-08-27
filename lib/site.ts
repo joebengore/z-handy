@@ -9,7 +9,7 @@ export const site = {
 
   phone: "(813) 540-9095",
   phoneHref: "tel:+18135409095",
-  email: "contact@z-handyman.com",
+  email: "contact@z-handy.com",
 
   hours: "Open Daily · 8:00 AM – 6:00 PM",
   serviceArea: "Greater Tampa Metro Area",
