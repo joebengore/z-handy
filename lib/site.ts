@@ -20,6 +20,9 @@ export const site = {
     link: "zhandy/free-estimate",
     namespace: "30min",
   },
+
+  // Web3Forms access key (public by design — only routes mail to our inbox).
+  web3formsKey: "1ea9cdf2-4ae8-42fd-8cbe-a5d418461fad",
 } as const;
 
 /** Anchor links used by the Navbar and Footer for smooth-scroll navigation. */

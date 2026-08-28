@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "pdf": "npm run pdf:contract && npm run pdf:quote",
+    "pdf:contract": "md-to-pdf CONTRACT.md --config-file pdf.config.js",
+    "pdf:quote": "md-to-pdf QUOTE.md --config-file pdf.config.js"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
@@ -19,6 +22,7 @@
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "md-to-pdf": "^5.2.5",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   }

@@ -1,0 +1,117 @@
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 10pt;
+  line-height: 1.45;
+  color: #111827;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.letterhead {
+  display: block;
+  width: 190px;
+  height: auto;
+  margin: 0 auto 12px;
+}
+
+.diagram {
+  display: block;
+  width: 80%;
+  max-width: 380px;
+  height: auto;
+  margin: 0.5em auto 1.2em;
+  page-break-inside: avoid;
+}
+
+h1 {
+  font-size: 17pt;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #1e3a8a;
+  border-bottom: 2.5px solid #1e3a8a;
+  padding-bottom: 0.35em;
+  margin: 0 0 1.1em;
+}
+
+h2 {
+  font-size: 11.5pt;
+  color: #1e3a8a;
+  margin: 1.5em 0 0.6em;
+  padding-bottom: 0.18em;
+  border-bottom: 1px solid #d1d5db;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 10.5pt;
+  margin: 1.2em 0 0.5em;
+  page-break-after: avoid;
+}
+
+p,
+li {
+  orphans: 3;
+  widows: 3;
+  margin: 0.55em 0;
+}
+
+ol,
+ul {
+  padding-left: 1.4em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.3em 0;
+}
+
+/* Statutory notices (lien law, right to cancel) must never split across pages. */
+blockquote {
+  page-break-inside: avoid;
+  margin: 1em 0;
+  padding: 0.85em 1em;
+  background: #f8fafc;
+  border-left: 3px solid #1e3a8a;
+  font-size: 9pt;
+  line-height: 1.4;
+}
+
+blockquote strong {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 0.9em 0;
+  page-break-inside: avoid;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 5px 7px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #1e3a8a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+em {
+  color: #374151;
+}
+
+.page-break {
+  page-break-before: always;
+}

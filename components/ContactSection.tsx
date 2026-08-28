@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Phone, Mail, Clock, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, Clock, MapPin, Send, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
 import { site } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 
@@ -14,24 +14,48 @@ interface FormData {
 
 const initialForm: FormData = { name: "", email: "", message: "" };
 
+type Status = "idle" | "sending" | "error";
+
 /** Two-column contact block: business info + controlled message form. */
 export default function ContactSection() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
   const handleChange = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // TODO: Wire up to an API route (e.g. POST /api/contact) or a form
-    // service. The payload is ready to send as-is:
-    // await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) });
+    // Honeypot: real users never fill this hidden field.
+    const botcheck = (event.currentTarget.elements.namedItem("botcheck") as HTMLInputElement)?.value;
+    if (botcheck) return;
 
-    setSubmitted(true);
-    setForm(initialForm);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: site.web3formsKey,
+          subject: `New website inquiry from ${form.name}`,
+          from_name: `${site.name} Website`,
+          name: form.name,
+          email: form.email, // Web3Forms sets this as the reply-to
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || "Submission failed");
+
+      setStatus("idle");
+      setSubmitted(true);
+      setForm(initialForm);
+    } catch {
+      setStatus("error");
+    }
   };
 
   const infoItems = [
@@ -118,6 +142,15 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot spam trap — hidden from real users */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div>
                   <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">
                     Name
@@ -165,12 +198,34 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {status === "error" && (
+                  <p className="flex items-center gap-2 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">
+                    <AlertTriangle className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    Something went wrong sending your message. Please try again, or
+                    call us at{" "}
+                    <a href={site.phoneHref} className="font-semibold underline">
+                      {site.phone}
+                    </a>
+                    .
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-accent-dark sm:w-auto"
+                  disabled={status === "sending"}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
-                  <Send className="h-4 w-4" aria-hidden="true" />
-                  Send Message
+                  {status === "sending" ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4" aria-hidden="true" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             )}
