@@ -29,9 +29,9 @@ export default function ContactSection() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Honeypot: real users never fill this hidden field.
-    const botcheck = (event.currentTarget.elements.namedItem("botcheck") as HTMLInputElement)?.value;
-    if (botcheck) return;
+    // Honeypot: real users never tick this hidden checkbox.
+    const botcheck = event.currentTarget.elements.namedItem("botcheck") as HTMLInputElement | null;
+    if (botcheck?.checked) return;
 
     setStatus("sending");
     try {
