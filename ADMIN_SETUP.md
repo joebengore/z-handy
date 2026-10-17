@@ -48,6 +48,8 @@ Do all of the following while signed in to Google as `pro.zhandyman@gmail.com`.
    ```
 
    Sign in as `pro.zhandyman@gmail.com`, approve access, and the script prints the values for all the `GOOGLE_*` variables. If you already have a Drive folder for job sheets, skip `--create-folder` and copy the folder ID from its URL (`https://drive.google.com/drive/folders/<ID>`).
+
+   **"Error 403: access_denied" with no *Advanced* link** means the app is still in *Testing* and the account you picked isn't a test user. Go back to step 3: make sure `pro.zhandyman@gmail.com` is listed under test users **and** the publishing status says *In production*, then run the script again and pick `pro.zhandyman@gmail.com` in the account chooser.
 6. Add the variables (plus `ADMIN_PASSWORD`) in Vercel and redeploy.
 
 If the refresh token is ever revoked (password change with sessions reset, removing the app at <https://myaccount.google.com/permissions>), run `npm run google:auth` again and update `GOOGLE_REFRESH_TOKEN`.

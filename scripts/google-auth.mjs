@@ -55,7 +55,9 @@ authUrl.search = new URLSearchParams({
   response_type: "code",
   scope: SCOPES.join(" "),
   access_type: "offline",
-  prompt: "consent",
+  // select_account forces the account chooser so the wrong signed-in Gmail isn't picked silently.
+  prompt: "consent select_account",
+  login_hint: "pro.zhandyman@gmail.com",
 }).toString();
 
 console.log("\nOpening Google sign-in in your browser. Sign in as pro.zhandyman@gmail.com (the account that owns the Drive folder).");
