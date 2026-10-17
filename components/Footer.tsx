@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="#top" className="inline-block">
+            <Link href="/" className="inline-block">
               <Image
                 src="/images/logo_large_white.svg"
                 alt={`${site.name} logo`}
@@ -37,7 +37,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition-colors hover:text-accent">
+                  <a href={`/${link.href}`} className="transition-colors hover:text-accent">
                     {link.label}
                   </a>
                 </li>
@@ -83,10 +83,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-slate-400">
+        <div className="mt-12 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center text-sm text-slate-400 sm:flex-row sm:justify-between">
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
+          <nav aria-label="Legal" className="flex gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-accent">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-accent">
+              Terms of Service
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>
