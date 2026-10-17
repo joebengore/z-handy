@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "google:auth": "node scripts/google-auth.mjs",
     "pdf": "npm run pdf:contract && npm run pdf:quote",
     "pdf:contract": "md-to-pdf CONTRACT.md --config-file pdf.config.js",
     "pdf:quote": "md-to-pdf QUOTE.md --config-file pdf.config.js"
