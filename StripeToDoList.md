@@ -74,7 +74,11 @@ Stripe's reviewers open the site. These must be visible without logging in:
 
 - [ ] The statement descriptor **Z-HANDYMAN** matches the brand on the site so customers recognize the charge and don't dispute it.
 
-### 1.5 After submitting
+### 1.5 The onboarding wizard will try to send you to Settings → Tax — skip it
+
+After activation, Stripe's wizard pushes you to **Stripe Tax** ("Add a tax registration" / "Start collecting tax"). That's a separate, optional, paid product (0.5% per transaction) for businesses that charge customers sales tax. You don't: Florida treats painting and handyman work as real-property improvement, labor isn't taxable, and you pay tax on materials at purchase. Click **Skip / Not now**, or just go to **Home** — payments work without it. Afterwards **Settings → Tax** should read *Not enabled*. If you already added a Florida registration, remove it under **Settings → Tax → Registrations** and turn collection off, or Stripe will start adding sales tax to deposits and the DOR will expect filings.
+
+### 1.6 After submitting
 
 - Most accounts are approved in minutes to a day. Live API keys (`sk_live_…`) appear once approved.
 - If Stripe emails asking for documents (EIN letter, a utility bill for the address, your ID), reply within the deadline through the dashboard — unanswered requests are the most common cause of paused payouts.
