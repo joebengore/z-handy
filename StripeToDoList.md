@@ -27,7 +27,7 @@ Fill in the form **exactly** like this:
 
 | Field | Enter |
 |---|---|
-| Type of business | **Company → Limited Liability Company (LLC)** |
+| Type of business | **Company → Single-member LLC** (you're the sole member and haven't elected corporate taxation, so you're a "disregarded entity" taxed like a sole proprietor — pick *Single-member LLC*, not *Private corporation*) |
 | Legal business name | **Z-Handyman LLC** (must match the EIN letter character-for-character) |
 | EIN | From `CP_575_G.pdf` |
 | Doing business as | **Z-Handyman** |
@@ -41,7 +41,7 @@ Fill in the form **exactly** like this:
 | Customer support address | Same as business address |
 | Statement descriptor | **Z-HANDYMAN** |
 | Shortened descriptor | **ZHANDYMAN** |
-| Business representative | You — legal name, DOB, home address, SSN, title **Owner / Managing Member**, ownership ≥25% ✔ |
+| Business representative | You — legal name, DOB, home address, SSN, title **Owner / Managing Member**, ownership ≥25% ✔ (the SSN is for identity verification; the EIN above is the business tax ID) |
 | Payout bank account | Business checking: routing + account number (double-check; a typo delays your first payout by weeks) |
 | Payout schedule | Leave the default (automatic, daily, 2-business-day rolling) |
 
