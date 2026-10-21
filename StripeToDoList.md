@@ -47,6 +47,8 @@ Fill in the form **exactly** like this:
 
 If Stripe asks **"When do customers typically receive what they pay for?"** choose **"Within 1–2 weeks"** or the closest option, and if it asks **"What percentage of payments are for future delivery?"** answer honestly (roughly half — deposits are collected before work starts; final payments after). These questions exist to size dispute risk; honest answers with the description below are fine for a contractor.
 
+**You do not need a Florida state tax ID for Stripe.** US activation asks only for the federal EIN and the owner's SSN. If verification stalls and Stripe asks for a "business registration number" or document, use the **Sunbiz document number** (`L26…`) or the Articles of Organization PDF from sunbiz.org. Skip **Stripe Tax → Add registration** — that's for collecting sales tax, which a Florida real-property contractor doesn't do (you pay tax on materials at purchase; labor isn't taxable). As a single-member LLC with no employees you don't owe Florida sales tax, corporate income tax, or reemployment tax yet, so there's nothing to register with the Department of Revenue. If you ever do file the DR-1 (first W-2 hire, or retail sales), the entity type is **LLC → treated as a Disregarded entity** — not C or S corporation. What Florida *does* require: the Sunbiz annual report (Jan 1–May 1, $138.75) and Pinellas County + City of St. Petersburg Business Tax Receipts.
+
 ### 1.3 Product description — copy this
 
 Stripe reads this. It should match the website, name the service plainly, and show that money is tied to signed work agreements.
