@@ -33,7 +33,7 @@ Fill in the form **exactly** like this:
 | Doing business as | **Z-Handyman** |
 | Registered business address | **2850 34th St N, Suite 105, St. Petersburg, FL 33713** |
 | Business phone | **(813) 540-9095** |
-| Industry | **Home services → Contractors** (if the list differs, pick *Construction / Contractors* or *Painting contractors*; avoid anything "General retail" or "Other"). Stripe assigns MCC **1799 — Special Trade Contractors** for this; that's correct for painting and handyman work. |
+| Industry | **Home services → Contractors** (if the list differs, pick *Construction / Contractors* or *Painting contractors*; avoid anything "General retail" or "Other"). Stripe assigns MCC **1799 — Special Trade Contractors** for this; that's correct for painting and handyman work. (Stripe doesn't ask for a NAICS code, but if any other form does — IRS, Florida DOR, insurance, Business Tax Receipt — the primary is **238320 Painting and Wall Covering Contractors**; secondary 236118 Residential Remodelers and 561730 Landscaping Services.) |
 | Business website | **https://z-handy.com** |
 | Product description | Use the text in **1.3** below, verbatim |
 | Customer support phone | **(813) 540-9095** |
