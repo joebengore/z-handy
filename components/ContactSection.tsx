@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Phone, Mail, Clock, MapPin, Send, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail, Clock, MapPin, Send, CheckCircle2, AlertTriangle, Loader2, CreditCard } from "lucide-react";
 import { site } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 
@@ -115,6 +116,19 @@ export default function ContactSection() {
                 Areas Served
               </p>
               <p className="mt-2 text-slate-200">{site.areasServed.join(" · ")}</p>
+            </div>
+
+            <div className="mt-6 border-t border-white/10 pt-6">
+              <p className="text-sm font-medium uppercase tracking-wide text-slate-400">
+                Already a customer?
+              </p>
+              <Link
+                href="/pay"
+                className="mt-2 inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent hover:text-white"
+              >
+                <CreditCard className="h-4 w-4" aria-hidden="true" />
+                Make a payment online
+              </Link>
             </div>
           </div>
 

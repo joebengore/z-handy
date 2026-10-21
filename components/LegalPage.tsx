@@ -4,14 +4,16 @@ import { ArrowLeft } from "lucide-react";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
-/** Simple shell for standalone legal pages (privacy, terms) outside the one-page home layout. */
+/** Shell for standalone pages (privacy, terms, payments) outside the one-page home layout. */
 export default function LegalPage({
   title,
   updated,
+  intro,
   children,
 }: {
   title: string;
-  updated: string;
+  updated?: string;
+  intro?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -28,7 +30,8 @@ export default function LegalPage({
       </header>
       <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900">{title}</h1>
-        <p className="mt-2 text-sm text-slate-500">Last updated: {updated}</p>
+        {updated && <p className="mt-2 text-sm text-slate-500">Last updated: {updated}</p>}
+        {intro && <p className="mt-3 text-lg text-slate-600">{intro}</p>}
         <div className="prose-legal mt-8 space-y-6 text-slate-700">{children}</div>
       </main>
       <Footer />

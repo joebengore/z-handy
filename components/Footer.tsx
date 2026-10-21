@@ -42,6 +42,11 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link href="/pay" className="transition-colors hover:text-accent">
+                  Make a Payment
+                </Link>
+              </li>
             </ul>
           </div>
 

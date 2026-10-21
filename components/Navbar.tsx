@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, CalendarCheck } from "lucide-react";
+import { Menu, X, CalendarCheck, CreditCard } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
 
 /**
@@ -56,6 +56,15 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              href="/pay"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-brand"
+            >
+              <CreditCard className="h-4 w-4" aria-hidden="true" />
+              Make a Payment
+            </Link>
+          </li>
         </ul>
 
         {/* Desktop CTA */}
@@ -94,6 +103,16 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                href="/pay"
+                onClick={closeMenu}
+                className="flex items-center gap-2 rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand"
+              >
+                <CreditCard className="h-5 w-5" aria-hidden="true" />
+                Make a Payment
+              </Link>
+            </li>
             <li className="pt-2">
               <a
                 href="#schedule"

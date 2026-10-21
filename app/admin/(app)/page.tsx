@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FilePlus2, FolderOpen } from "lucide-react";
+import { CreditCard, FilePlus2, FolderOpen } from "lucide-react";
 
 const choices = [
   {
@@ -14,13 +14,19 @@ const choices = [
     title: "Existing jobs",
     description: "Browse jobs by number, review line items, and edit details or items.",
   },
+  {
+    href: "/admin/payment",
+    icon: CreditCard,
+    title: "Payment request",
+    description: "Build a secure Stripe link for a deposit, progress payment, or balance and text it to the customer.",
+  },
 ] as const;
 
 export default function AdminHomePage() {
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="mx-auto max-w-5xl">
       <h1 className="text-2xl font-bold text-slate-900">What would you like to do?</h1>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {choices.map(({ href, icon: Icon, title, description }) => (
           <Link
             key={href}
