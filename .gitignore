@@ -31,3 +31,7 @@ next-env.d.ts
 # internal business docs
 MARKETING-PLAN.md
 /google-drive/
+
+# customer data exports (Stripe logs etc.) — never commit
+*transaction_logs*.txt
+*.stripe.json

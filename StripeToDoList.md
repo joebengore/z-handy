@@ -101,7 +101,7 @@ Set the **Test mode** toggle (top-right) to **OFF** for all of these. Each lives
 | 7 | **Owner notifications ON** | Avatar (top-right) → **Profile → Notifications** | **Successful payments ✔**, **Disputes ✔**, **Payouts ✔**. One email per customer payment. |
 | 8 | Payment methods | Settings → Payments → **Payment methods** | **Cards ✔**, **Apple Pay ✔**, **Google Pay ✔**, **Link ✔**. Turn **OFF** Klarna, Affirm, Afterpay, Cash App Pay (buy-now-pay-later isn't appropriate for contractor deposits and raises dispute risk). |
 | 9 | **ACH Direct Debit — turn ON** | Same page → **US bank account** | Recommended. Cards cost 2.9% + 30¢ (≈$537 on an $18,500 final payment); ACH is 0.8% capped at **$5**. It appears on the payment page automatically. Caveat: ACH takes ~4 business days to settle and can fail afterward (insufficient funds). The success page already says "being processed" for ACH; treat a job as paid only when the dashboard shows **Succeeded**. |
-| 10 | Radar (fraud) | Settings → **Radar → Rules** | Leave defaults. Confirm "Block if CVC verification fails" and "Block if postal code fails" are on (they are by default). |
+| 10 | Radar (fraud) | Settings → **Radar** | **Upgrade to Radar for Fraud Teams** ($0.02/transaction). You need it for allow lists and a review queue; a $2.5k invoice was auto-blocked on day one because the basic plan can only hard-block. Then under **Rules**: keep "Block if CVC fails" / "Block if postal code fails"; change the default *Block if risk level = highest* to **Review** for amounts ≥ $500 so you get a phone call instead of a lost payment. |
 | 11 | Disputes | Settings → Business → **Customer emails** → *Disputes* | Leave on. Keep signed agreements, quotes, and before/after photos per job — that's what wins a chargeback. |
 | 12 | Team | Settings → **Team and security** | Only you for now. If a subcontractor needs to see payments, add them as **View only**, never Administrator. |
 
@@ -152,16 +152,23 @@ Until the Production key is set, the live site shows "Online payments aren't set
 
 Stripe can email a hosted invoice with a Pay button. Requires an activated account (Part 1) and **Test mode OFF**.
 
-1. Left menu **Customers → + Add customer**. Name, email, and (optional) the job address in *Address*. **Add customer**.
+> **Lesson from the first live invoice (Oct 21):** the customer's first two attempts were real bank declines (insufficient funds), then he retried five more times in ten minutes across three payment methods and Stripe's fraud filter (Radar) blocked everything after that — his cards were never even sent to the bank. The charges had no name, email, or street address attached, so Radar had nothing to vouch for him. Steps 1 and 4 below exist to prevent that.
+
+1. Left menu **Customers → + Add customer**. Fill in **everything**: full name, email, **phone**, and the **billing address for the card they'll use** (street, city, state, ZIP — not just the job address). Incomplete customer records are the #1 reason a legitimate payment gets flagged.
 2. Left menu **Invoices → + Create invoice**.
 3. **Customer**: pick them.
 4. **Items → Add item → Add one-off item**:
    - Name: `Final Payment — 261001` (use the job number; or `Deposit — 12 Oak St`)
    - Description: `Painting/handyman services — 12 Oak St, Tampa`
    - Amount: the dollar figure. Quantity 1. No tax.
-5. **Payment due**: *On receipt* (or a date). **Collection method**: *Email invoice to customer with link to pay*. Make sure **Card** and (if enabled) **ACH** are ticked under payment methods.
-6. **Memo** (optional, shows on the invoice): `Per signed work agreement dated …`
+   Never leave Stripe's default "Payment for Invoice" text — the job reference is what you'll search for later and it helps Radar see a normal contractor payment.
+5. **Payment due**: *On receipt* (or a date). **Collection method**: *Email invoice to customer with link to pay*. Make sure **Card** and **US bank account (ACH)** are both ticked under payment methods — ACH is the fallback when a card's limit can't cover a large balance.
+6. **Memo**: `Per signed work agreement dated …  If a payment doesn't go through, please call (813) 540-9095 rather than retrying — repeated attempts are flagged automatically.`
 7. **Send invoice**. The customer gets an email with **Pay this invoice**; it works on any phone. You get an email when it's paid, and the money follows your normal payout schedule.
+
+**If a payment is declined or blocked:** check **Payments** → the attempt → *"Why was this payment blocked?"*. A bank decline (insufficient funds, do-not-honor) is the customer's side — have them fix it and try **once**. A Radar block (*"Stripe blocked this payment as too risky"*) is automatic: update the customer record, add them to the **allowlist** if you have Radar for Fraud Teams, wait up to 24 hours, then send a **new** invoice (duplicate the old one and void it) so the retry history doesn't follow it. Offer ACH or Zelle/check in the meantime.
+
+One-time settings that make hand-made invoices safer: **Settings → Billing → Invoices → Payment page → Collect billing address ON**, and **Settings → Radar → upgrade to Radar for Fraud Teams** ($0.02/transaction) so you get allow lists and a *review* queue instead of hard blocks on large payments.
 
 Faster alternative from your phone: **Payment Links → + New → Customers choose what to pay** *off*, enter name/amount → **Create link** → copy the `buy.stripe.com/…` URL and text it. (Once the site's live key is in, use **z-handy.com/admin → Payment** instead — it prefills from the job and keeps everything matched to the job number.)
 
